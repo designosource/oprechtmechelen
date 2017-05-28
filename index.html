@@ -146,6 +146,10 @@ VRIJDAG 9 JUNI, 22U, GROTE MARKT </h2>
         function checkIfPlaying() {
             isPlaying = !spektakelMusic.paused;
             if (isPlaying) {
+                if (verse >= 6) {
+                    $lyrics.removeClass('lyric-line--active');
+                    return true;
+                }
                 if (counter === 11) {
                     counter = 0;
                     verse++;
@@ -214,7 +218,7 @@ VRIJDAG 9 JUNI, 22U, GROTE MARKT </h2>
             } else {}
         }
 
-        setInterval(checkIfPlaying, 1007);
+        setInterval(checkIfPlaying, 1035);
 
     </script>
 
