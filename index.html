@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta property="og:title" content="Slotspektakel OP.RECHT. - 9 juni 2017" />
+    <meta property="og:description" content="Slotspektakel OP.RECHT. - 9 juni 2017 om 22u op de Grote Markt van Mechelen." />
+    <meta property="og:image" content="www.oprechtmechelen.be/slotspektakel/images/spektakel_share.jpg" />
+    <meta property="og:image:url" content="www.oprechtmechelen.be/slotspektakel/images/spektakel_share.jpg" />
+    <title>Slotspektakel OP.RECHT.</title>
+    <link rel="stylesheet" href="css/spektakel_reset.css">
+    <link rel="stylesheet" href="css/spektakel_style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="spektakelNav">
+
+        <a href="#" class="spektakelNav-logo"><h1>OP.RECHT.MECHELEN. SLOTSPEKTAKEL</h1>
+        </a>
+        <a href="#" class="spektakelNav-btn">Leer de canon</a>
+        <a href="#ontdekPanelen" class="spektakelNav-btn">Vind de affiches</a>
+        <h2 class="spektakel-date">SLOTSPEKTAKEL OP.RECHT. <br>
+VRIJDAG 9 JUNI, 22U, GROTE MARKT </h2>
+    </nav>
+
+    <div class="panel panel--top">
+
+        <div class="spektakel-lyricsDeco">
+            <div class="spektakel-lyricsBox">
+                <span class="lyric-line lyric-line--first">He Ho</span>
+                <span class="lyric-line lyric-line--second">kom maar hier mijn lief</span>
+                <span class="lyric-line lyric-line--third">Soms zullen we buigen</span>
+                <span class="lyric-line lyric-line--fourth">Maar breken doen we niet</span>
+                <span class="lyric-line lyric-line--fifth">Kruip maar in mijn armen</span>
+                <span class="lyric-line lyric-line--sixth">Laat me je verwarmen</span>
+            </div>
+        </div>
+
+        <div class="spektakel-playerContainer">
+            <h2 class="player-title">Zing mee met:</h2>
+            <div class="voiceContainer">
+                <a href="#" class="player-voice player-voice--active" data-val="1">Stem 1</a>
+                <a href="#" class="player-voice" data-val="2">Stem 2</a>
+            </div>
+            <audio src="audio/oprecht.mp3" controls="controls" preload="auto" id="spektakel-music"></audio>
+        </div>
+
+        <div class="spektakel-bottom">
+            <div class="spektakel-stadContainer">
+                <span class="spektakel-stad"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="panel panel--bottom" id="ontdekPanelen">
+        <h2 class="panel-title">
+            Ontdek de interactieve panelen:
+        </h2>
+        <div class="locationDiv">
+            <h3 class="locationTitle">Indoor:</h3>
+            <ul class="locationList">
+                <li class="locationList-item">
+                    <span class="locationList-item--name">UiT in Mechelen</span>
+                    <span class="locationList-item--address">Hallestraat 2-4-6</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Huis van de Mechelaar</span>
+                    <span class="locationList-item--address">Reuzenstraat 1</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Bibliotheek</span>
+                    <span class="locationList-item--address">Moensstraat 19</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Hof van Savoye</span>
+                    <span class="locationList-item--address">Keizerstraat 20</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Honoloeloe</span>
+                    <span class="locationList-item--address">Grote Markt 11</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Sister Bean</span>
+                    <span class="locationList-item--address">Vismarkt 26</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">De Kuub</span>
+                    <span class="locationList-item--address">Minderbroedersgang 3</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">De Gouden Vis</span>
+                    <span class="locationList-item--address">Nauwstraat 7</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">Unwined</span>
+                    <span class="locationList-item--address">Steenweg 22</span>
+                </li>
+                <li class="locationList-item">
+                    <span class="locationList-item--name">De Nekker</span>
+                    <span class="locationList-item--address">Geerdegemsvaart</span>
+                </li>
+            </ul>
+        </div>
+        <a href="https://www.facebook.com/events/1524357507582788/" target="_blank" class="facebook">Naar het Facebookevenement</a>
+    </div>
+
+    <script>
+        // VARIABLES
+        var isPlaying;
+        var counter = 0;
+        var verse = 1;
+        var el;
+        var activeVoice = 1;
+
+        // LOOKUPS
+        var spektakelMusic = document.getElementById("spektakel-music");
+
+        var $lyrics = $('.lyric-line');
+        var $first = $('.lyric-line--first');
+        var $second = $('.lyric-line--second');
+        var $third = $('.lyric-line--third');
+        var $fourth = $('.lyric-line--fourth');
+        var $fifth = $('.lyric-line--fifth');
+        var $sixth = $('.lyric-line--sixth');
+
+        var $voices = $('.player-voice');
+        var voiceBtn = $('.player-voice');
+
+        voiceBtn.click(function(e) {
+            e.preventDefault();
+            $lyrics.removeClass('lyric-line--active');
+            $voices.removeClass('player-voice--active')
+            activeVoice = $(this).data('val');
+            $(this).addClass('player-voice--active');
+        });
+
+        function makeRed(el) {
+            $lyrics.removeClass('lyric-line--active');
+            el.addClass('lyric-line--active')
+        }
+
+
+        function checkIfPlaying() {
+            isPlaying = !spektakelMusic.paused;
+            if (isPlaying) {
+                if (counter === 11) {
+                    counter = 0;
+                    verse++;
+                }
+                counter++;
+                if (activeVoice == 1) {
+                    switch (counter) {
+                        case 0:
+                        case 1:
+                            makeRed($first);
+                            break;
+                        case 2:
+                        case 3:
+                            makeRed($second);
+                            break;
+                        case 4:
+                        case 5:
+                            makeRed($third);
+                            break;
+                        case 6:
+                        case 7:
+                            makeRed($fourth);
+                            break;
+                        case 8:
+                        case 9:
+                            makeRed($fifth);
+                            break;
+                        case 10:
+                        case 11:
+                            makeRed($sixth);
+                            break;
+                    }
+                }
+                if (activeVoice == 2 && verse >= 2) {
+                    switch (counter) {
+                        case 0:
+                        case 1:
+                            if (verse >= 3) {
+                                makeRed($fifth);
+                            }
+                            break;
+                        case 2:
+                        case 3:
+                            if (verse >= 3) {
+                                makeRed($sixth);
+                            }
+                            break;
+                        case 4:
+                        case 5:
+                            makeRed($first);
+                            break;
+                        case 6:
+                        case 7:
+                            makeRed($second);
+                            break;
+                        case 8:
+                        case 9:
+                            makeRed($third);
+                            break;
+                        case 10:
+                        case 11:
+                            makeRed($fourth);
+                            break;
+                    }
+                }
+            } else {}
+        }
+
+        setInterval(checkIfPlaying, 1007);
+
+    </script>
+
+</body>
+
+</html>
