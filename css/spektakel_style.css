@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+2@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @font-face {
     font-family: "arquitecta";
     font-style: normal;
@@ -55,8 +55,8 @@ body {
 }
 .spektakel-date {
     font-family: 'Arquitecta', sans-serif;
-    font-size: 22px;
-    color: #006b76;
+    font-size: 28px;
+    color: #E5324E;
     position: absolute;
     top: 0;
     left: 190px;
@@ -66,6 +66,7 @@ body {
 
 .panel {
     position: relative;
+    height: auto;
     min-height: 100vh;
     width: 100%;
 }
@@ -95,11 +96,11 @@ body {
 .spektakel-lyricsDeco {
     position: absolute;
     right: 10vw;
-    bottom: 40vh;
+    bottom: 30vh;
     z-index: 3;
     display: block;
     background-color: #E5324E;
-    height: 30vh;
+    height: 40vh;
     width: 50vh;
 }
 .spektakel-lyricsDeco::after {
@@ -134,15 +135,21 @@ body {
     padding-left: 70px;
     padding-top: 40px;
     box-sizing: border-box;
-    left: -50px;
+    left: -20px;
     z-index: 4;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #6F6D6D;
 }
 .lyric-line {
     display: block;
-    line-height: 20px;
+    line-height: 22px;
+}
+.lyricsCTA {
+    font-size: 24px;
+    color: #006b76;
+    font-weight: bold;
+    padding-bottom: 20px;
 }
 
 /*PLAYER*/
@@ -232,10 +239,11 @@ audio {
     content: "";
     display: block;
     position: absolute;
-    bottom: 100px;
+    bottom: -1px;
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/orm-stad.svg);
+    background-image: url(../images/orm-stad3.png);
+    background-image: url(../images/orm-stad3.svg), none;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -245,7 +253,7 @@ audio {
     bottom: 0;
     display: block;
     width: 100%;
-    height: 100px;
+    height: 0px;
     background-color: #0D6C77;
 }
 
@@ -263,14 +271,15 @@ audio {
     transform: skewY(2deg);
 }
 .locationDiv {
-    position: absolute;
-    left: 15vw;
-    top: 40vh;
+    position: relative;
+    margin: 0 auto;
+    top: 32vh;
     z-index: 3;
     display: block;
     background-color: #E5324E;
     height: auto;
     width: 70vw;
+    margin-bottom: 10vh;
 }
 .locationDiv::after {
     content: '';
@@ -294,6 +303,24 @@ audio {
     font-family: 'Open Sans';
     color: white;
 }
+.locationCTA {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-family: 'Arquitecta', sans-serif;
+    margin-top: 50px;
+    font-size: 22px;
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    padding: 0 20%;
+}
+.locationIMG {
+    position: absolute;
+    width: 30%;
+    right: -15%;
+    display: inline-block;
+}
 .locationList-item {
     width: 30%;
     vertical-align: top;
@@ -301,12 +328,18 @@ audio {
     padding-left: 10px;
     padding-bottom: 5px;
 }
-.locationList-item--name {
+.locationList-item--name a {
     font-size: 18px;
     font-weight: bold;
     display: block;
     width: 100%;
     padding: 5px 20px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease;
+}
+.locationList-item:hover a {
+    transform: translateX(10px);
 }
 .locationList-item--address {
     padding-left: 30px;
@@ -314,8 +347,8 @@ audio {
     font-style: italic;
 }
 .facebook {
-    position: absolute;
-    bottom: 5vh;
+    position: relative;
+    padding-top: 30vh;
     display: block;
     width: 100%;
     font-family: 'Arquitecta', sans-serif;
