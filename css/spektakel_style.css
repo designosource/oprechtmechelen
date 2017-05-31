@@ -1,4 +1,4 @@
-2@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @font-face {
     font-family: "arquitecta";
     font-style: normal;
@@ -40,7 +40,7 @@ body {
     font-family: 'Arquitecta', sans-serif;
     font-size: 22px;
     color: #006b76;
-    padding: 12px 8px 8px 8px;
+    padding: 9px 8px 8px 8px;
     margin-left: 10px;
     display: inline-block;
     border: 2px solid #006b76;
@@ -161,7 +161,7 @@ body {
     display: block;
     height: 200px;
     width: 400px;
-    background-color: white;
+    background-color: #FAFAFA;
     z-index: 4;
     box-sizing: border-box;
     padding: 10px;
@@ -280,6 +280,7 @@ audio {
     height: auto;
     width: 70vw;
     margin-bottom: 10vh;
+    box-shadow: 0 8px 73px 18px rgba(0, 0, 0, 0.13);
 }
 .locationDiv::after {
     content: '';
@@ -320,6 +321,7 @@ audio {
     width: 30%;
     right: -15%;
     display: inline-block;
+    box-shadow: 0 8px 73px 18px rgba(0, 0, 0, 0.13);
 }
 .locationList-item {
     width: 30%;
@@ -348,7 +350,7 @@ audio {
 }
 .facebook {
     position: relative;
-    padding-top: 30vh;
+    padding-top: 35vh;
     display: block;
     width: 100%;
     font-family: 'Arquitecta', sans-serif;
@@ -361,9 +363,23 @@ audio {
 .facebook:hover {
     text-decoration: underline;
 }
+.backToHome {
+    font-family: 'Arquitecta', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: #E5324E;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.backToHome:hover {
+    text-decoration: underline;
+}
 @media only screen and (max-device-width: 770px) {
     .spektakel-lyricsBox {
-        font-size: 36px;
+        font-size: 46px;
     }
     .lyric-line {
         line-height: 50px;
@@ -373,6 +389,9 @@ audio {
     }
     .locationDiv {
         top: 30vh;
+    }
+    .locationList-item {
+        width: 47%;
     }
     .locationList-item--name {
         font-size: 28px;
@@ -389,13 +408,24 @@ audio {
         right: 7.5vw;
         width: 80vw;
     }
+    .spektakelNav-logo {
+        margin-right: 10px;
+    }
     .spektakel-playerContainer {
         height: auto;
         width: 100vw;
         left: auto;
         bottom: 0;
     }
+    audio {
+        height: auto;
+        height: 6vh;
+    }
     .spektakelNav-btn {
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 50px;
         font-size: 30px;
         padding: 18px 16px 12px 16px;
     }
@@ -410,11 +440,30 @@ audio {
         display: block;
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
+        padding-left: 0;
+        margin-top: 30px;
     }
     .locationList-item--name {
         font-size: 32px;
     }
+    .locationList-item--name a,
+    .locationList-item--address {
+        padding-left: 0;
+        box-sizing: border-box;
+    }
     .locationList-item--address {
         font-size: 24px;
+    }
+    .locationIMG {
+        right: auto;
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        margin-top: 70px;
+    }
+    .lyricsCTA {
+        font-size: 46px;
     }
 }
